@@ -1,0 +1,12 @@
+{
+  "name": "v-compiler",
+  "version": "1.0.0",
+  "description": "Verbose Programming Interface For The Visually Impaired",
+  "main": "vcompiler.js",
+  "scripts": {
+    "test": "node vparser.js"
+  },
+  "author": "BobbyL2k",
+  "license": "MIT",
+  "private": true
+}
