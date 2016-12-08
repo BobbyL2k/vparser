@@ -460,30 +460,12 @@ class Parser{
         }
         // test.summary();
 
-        // var parser = new Parser(tokens, expressions, parsingTable, "Program");
-        // var code = [
-        //     "Function eiei x y End",
-        //         "Return x Add y End"].join(' ').split(' ');
-        // console.log(code);
-        // for(var c=0; c<code.length; c++){
-        //     console.log(
-        //         "Processing", code[c], c
-        //     );
-        //     parser.feed(code[c]);
-        // }parser.feed(undefined); // EOF
-
-        // parser.reset();
-        // code = "eiei Of 1 + 3 2 End".split(' ');
-        // for(var c=0; c<code.length; c++){
-        //     console.log(
-        //         "Processing", code[c], c
-        //     );
-        //     parser.feed(code[c]);
-        // }parser.feed(undefined); // EOF
+        var parser = new Parser(tokens, expressions, parsingTable, "Program");
+        var code;
 
         // parser.reset();
         // code = ["If x Is Less Than 3 Then",
-        //             "x Equal x + 1",
+        //             "x Equal x Add 1",
         //         "End If"].join(' ').split(' ');
         // for(var c=0; c<code.length; c++){
         //     console.log(
@@ -493,9 +475,9 @@ class Parser{
         // }parser.feed(undefined); // EOF
 
         // parser.reset();
-        // var code = ["Function eiei x y End",
+        // code = ["Function eiei x y End",
         //                 "If x Is Less Than 3 Then",
-        //                     "x Equal x + 1",
+        //                     "x Equal x Add 1",
         //                 "End If",
         //                 "Return x Add y",
         //             "End"].join(' ').split(' ');
@@ -509,12 +491,12 @@ class Parser{
         // parser.reset();
         // var code = ["Function eiei x y End",
         //                 "While x Is Less Than 3 Then",
-        //                     "x Equal x + 1",
-        //                     "y Equal y * 2",
+        //                     "x Equal x Add 1",
+        //                     "y Equal y Divide 2",
         //                 "End While",
         //                 "Return y",
         //             "End",
-        //             "eiei Of 1 + 3 2 End"].join(' ').split(' ');
+        //             "eiei Of 1 Add 3 2 End"].join(' ').split(' ');
         // for(var c=0; c<code.length; c++){
         //     console.log(
         //         "Processing", code[c], c
