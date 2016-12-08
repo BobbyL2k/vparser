@@ -1,0 +1,95 @@
+{
+    "Program": [
+        "EMPTY",
+        "Function",
+        "If",
+        "NAME",
+        "While"
+    ],
+    "GStatements": [
+        "Function",
+        "If",
+        "NAME",
+        "While",
+        "EMPTY"
+    ],
+    "Function": [
+        "Function"
+    ],
+    "Parameters": [
+        "NAME",
+        "End"
+    ],
+    "Statements": [
+        "If",
+        "NAME",
+        "While",
+        "End"
+    ],
+    "EndIfOrElse": [
+        "Else",
+        "If"
+    ],
+    "Statement": [
+        "If",
+        "While",
+        "NAME"
+    ],
+    "TempStates": [
+        "NAME",
+        "End"
+    ],
+    "TempStatement": [
+        "NAME"
+    ],
+    "StatementX": [
+        "Equal",
+        "Of",
+        "Add",
+        "Divide",
+        "Is",
+        "Multiply",
+        "Subtract",
+        "EMPTY"
+    ],
+    "FuncStates": [
+        "If",
+        "NAME",
+        "Return",
+        "While",
+        "End"
+    ],
+    "FuncState": [
+        "If",
+        "NAME",
+        "While",
+        "Return"
+    ],
+    "Assignment": [
+        "Equal"
+    ],
+    "FunctionCall": [
+        "Of"
+    ],
+    "Operation": [
+        "Add",
+        "Divide",
+        "Is",
+        "Multiply",
+        "Subtract"
+    ],
+    "Return": [
+        "Return"
+    ],
+    "Operator": [
+        "Add",
+        "Subtract",
+        "Multiply",
+        "Divide",
+        "Is"
+    ],
+    "CmpOp": [
+        "Less",
+        "Equal"
+    ]
+}

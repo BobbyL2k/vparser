@@ -1,0 +1,101 @@
+{
+    "Program": {
+        "Function": 0,
+        "If": 0,
+        "NAME": 0,
+        "While": 0,
+        "END_OF_FILE": 0
+    },
+    "GStatements": {
+        "Function": 0,
+        "If": 1,
+        "While": 1,
+        "NAME": 1,
+        "END_OF_FILE": 2
+    },
+    "Function": {
+        "Function": 0
+    },
+    "Parameters": {
+        "NAME": 0,
+        "End": 1
+    },
+    "Statements": {
+        "If": 0,
+        "While": 0,
+        "NAME": 0,
+        "End": 1
+    },
+    "EndIfOrElse": {
+        "Else": 0,
+        "If": 1
+    },
+    "Statement": {
+        "If": 0,
+        "While": 1,
+        "NAME": 2
+    },
+    "TempStates": {
+        "NAME": 0,
+        "End": 1
+    },
+    "TempStatement": {
+        "NAME": 0
+    },
+    "StatementX": {
+        "Equal": 0,
+        "Of": 1,
+        "Add": 2,
+        "Divide": 2,
+        "Is": 2,
+        "Multiply": 2,
+        "Subtract": 2,
+        "Function": 3,
+        "If": 3,
+        "While": 3,
+        "NAME": 3,
+        "End": 3,
+        "Then": 3,
+        "Return": 3
+    },
+    "FuncStates": {
+        "If": 0,
+        "NAME": 0,
+        "While": 0,
+        "Return": 0,
+        "End": 1
+    },
+    "FuncState": {
+        "If": 0,
+        "While": 0,
+        "NAME": 0,
+        "Return": 1
+    },
+    "Assignment": {
+        "Equal": 0
+    },
+    "FunctionCall": {
+        "Of": 0
+    },
+    "Operation": {
+        "Add": 0,
+        "Subtract": 0,
+        "Multiply": 0,
+        "Divide": 0,
+        "Is": 0
+    },
+    "Return": {
+        "Return": 0
+    },
+    "Operator": {
+        "Add": 0,
+        "Subtract": 1,
+        "Multiply": 2,
+        "Divide": 3,
+        "Is": 4
+    },
+    "CmpOp": {
+        "Less": 0,
+        "Equal": 1
+    }
+}

@@ -8,5 +8,8 @@
   },
   "author": "BobbyL2k",
   "license": "MIT",
-  "private": true
+  "private": true,
+  "dependencies": {
+    "colors": "^1.1.2"
+  }
 }

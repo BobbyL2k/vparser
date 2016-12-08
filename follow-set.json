@@ -1,0 +1,127 @@
+{
+    "Program": [],
+    "GStatements": [
+        "END_OF_FILE"
+    ],
+    "Function": [
+        "Function",
+        "If",
+        "While",
+        "NAME"
+    ],
+    "Parameters": [
+        "If",
+        "While",
+        "NAME",
+        "Return",
+        "End"
+    ],
+    "Statements": [
+        "Else",
+        "If",
+        "While",
+        "Function",
+        "NAME",
+        "End",
+        "Then",
+        "Return"
+    ],
+    "EndIfOrElse": [
+        "Function",
+        "If",
+        "While",
+        "NAME",
+        "End",
+        "Then",
+        "Return"
+    ],
+    "Statement": [
+        "Function",
+        "If",
+        "While",
+        "NAME",
+        "End",
+        "Then",
+        "Return"
+    ],
+    "TempStates": [
+        "Function",
+        "If",
+        "While",
+        "NAME",
+        "End",
+        "Then",
+        "Return"
+    ],
+    "TempStatement": [
+        "Function",
+        "If",
+        "While",
+        "NAME",
+        "End",
+        "Then",
+        "Return"
+    ],
+    "StatementX": [
+        "Function",
+        "If",
+        "While",
+        "NAME",
+        "End",
+        "Then",
+        "Return"
+    ],
+    "FuncStates": [
+        "Function",
+        "If",
+        "While",
+        "NAME"
+    ],
+    "FuncState": [
+        "If",
+        "While",
+        "NAME",
+        "Return",
+        "End"
+    ],
+    "Assignment": [
+        "Function",
+        "If",
+        "While",
+        "NAME",
+        "End",
+        "Then",
+        "Return"
+    ],
+    "FunctionCall": [
+        "Function",
+        "If",
+        "While",
+        "NAME",
+        "End",
+        "Then",
+        "Return"
+    ],
+    "Operation": [
+        "Function",
+        "If",
+        "While",
+        "NAME",
+        "End",
+        "Then",
+        "Return"
+    ],
+    "Return": [
+        "If",
+        "While",
+        "NAME",
+        "Return",
+        "End"
+    ],
+    "Operator": [
+        "NAME"
+    ],
+    "CmpOp": [
+        "NAME"
+    ]
+}

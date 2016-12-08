@@ -51,10 +51,10 @@ const expressions = {
                     ['End']],
 
     EndIfOrElse   : [['Else', 'eStatements'],
-                    ['EndIf']],
+                    ['If']],
 
     Statement    : [['If', 'eStatement', 'Then', 'eStatements', 'eEndIfOrElse'],
-                    ['While', 'eStatement', 'eStatements'],
+                    ['While', 'eStatement', 'Then', 'eStatements', 'While'],
                     ['eTempStatement']],
 
     TempStates   : [['eTempStatement', 'eTempStates'],
@@ -99,6 +99,7 @@ const expressions = {
 
 "use strict";
 const assert = require('assert');
+const fs     = require('fs');
 const test   = require('test.js');
 
 // register special token
@@ -420,11 +421,44 @@ class Parser{
                         parsingTable[expressionName] = tokenUsed;
                     });
                 }
-                // test.notImplemented();
             });
         });
     }{
-        test.summary();
+        {// First Set
+            var outFirstSet = {};
+            for(var key in expressions){
+                outFirstSet[key] = {};
+                for(var ele in lookUp[`e${key}`].firstSet){
+                    for(var eles in lookUp[`e${key}`].firstSet[ele]){
+                        var elev = lookUp[`e${key}`].firstSet[ele][eles];
+                        outFirstSet[key][elev] = true;
+                    }
+                }
+                outFirstSet[key] = Object.keys(outFirstSet[key]);
+            }
+            fs.writeFile("first-set.json", JSON.stringify(outFirstSet, null, 4), function(){});
+        }
+        {// Follow Set
+            var outFollowSet = {};
+            for(var key in expressions){
+                outFollowSet[key] = {};
+                for(var ele in lookUp[`e${key}`].followSet){
+                    outFollowSet[key][ele] = true;
+                }
+                outFollowSet[key] = Object.keys(outFollowSet[key]);
+            }
+            fs.writeFile("follow-set.json", JSON.stringify(outFollowSet, null, 4), function(){});
+        }
+        {// Parsing Table
+            var outParsingTable = {};
+            for(var key in parsingTable){
+                outParsingTable[key] = {};
+                for(var token in parsingTable[key])
+                    outParsingTable[key][token] = parsingTable[key][token][0];
+            }
+            fs.writeFile("parsing-table.json", JSON.stringify(outParsingTable, null, 4), function(){});
+        }
+        // test.summary();
 
         // var parser = new Parser(tokens, expressions, parsingTable, "Program");
         // var code = [
@@ -449,8 +483,8 @@ class Parser{
 
         // parser.reset();
         // code = ["If x Is Less Than 3 Then",
-        //             "x Equal x + 1 End",
-        //         "EndIf"].join(' ').split(' ');
+        //             "x Equal x + 1",
+        //         "End If"].join(' ').split(' ');
         // for(var c=0; c<code.length; c++){
         //     console.log(
         //         "Processing", code[c], c
@@ -461,9 +495,10 @@ class Parser{
         // parser.reset();
         // var code = ["Function eiei x y End",
         //                 "If x Is Less Than 3 Then",
-        //                     "x Equal x + 1 End",
-        //                 "EndIf",
-        //                 "Return x Add y End"].join(' ').split(' ');
+        //                     "x Equal x + 1",
+        //                 "End If",
+        //                 "Return x Add y",
+        //             "End"].join(' ').split(' ');
         // for(var c=0; c<code.length; c++){
         //     console.log(
         //         "Processing", code[c], c
@@ -473,10 +508,12 @@ class Parser{
 
         // parser.reset();
         // var code = ["Function eiei x y End",
-        //                 "If x Is Less Than 3 Then",
-        //                     "x Equal x + 1 End",
-        //                 "EndIf",
-        //                 "Return x Add y End",
+        //                 "While x Is Less Than 3 Then",
+        //                     "x Equal x + 1",
+        //                     "y Equal y * 2",
+        //                 "End While",
+        //                 "Return y",
+        //             "End",
         //             "eiei Of 1 + 3 2 End"].join(' ').split(' ');
         // for(var c=0; c<code.length; c++){
         //     console.log(
@@ -484,11 +521,5 @@ class Parser{
         //     );
         //     parser.feed(code[c]);
         // }parser.feed(undefined); // EOF
-
-        for(var key in lookUp){
-            if( lookUp[key].followSet !== undefined)
-                console.log(key, Object.keys(lookUp[key].followSet));
-        }
-        // console.log(lookUp);
     }
 }
